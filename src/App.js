@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
+import ErrorBoundary from './ErrorBoundary';
 
-class App extends Component {
+class App extends React.Component {
 
-  onClick() {
-    this.fibonacci(5);
-    console.log('button clicked');
-  }
-  onSubmit() {
-    console.log('submitted');
+  setFib(e) {
+    this.setState({
+      currentFib: e.target.value
+    })
   }
   render() {
     const list = [0, 1, 3, 5, 7];
@@ -19,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
 
-        <input type="text" /><button type="submit">Submit</button>
+        <input type="text" onChange={ this.setFib } value={this.state.setFib.currentFib} /><button type="submit">Submit</button>
         <ul>
           {fibList}
         </ul>
