@@ -1,13 +1,18 @@
 import React from 'react';
 import './App.css';
-import ErrorBoundary from './ErrorBoundary';
 
 class App extends React.Component {
 
   setFib(e) {
     this.setState({
-      currentFib: e.target.value
+      currentFib: 0
     })
+      //F(n) = F(n-1) + F(n-2), n>1
+  if(this.state.value === 0) return 0;
+  if(this.state.value === 1) return 1;
+  if(this.state.value > 1) {
+      return f = (this.state.value - 1) + (this.state.value -2);
+  }
   }
   render() {
     const list = [0, 1, 3, 5, 7];
